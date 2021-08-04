@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "rafa-acioly.laravel-helpers",
+        "onecentlin.laravel5-snippets",
+        "onecentlin.laravel-blade",
+        "mohamedbenhida.laravel-intellisense"
+    ]
+}
