@@ -11,9 +11,9 @@ class Siparis extends Model
 
     protected $table = 'siparis';
 
-    /*protected $fillable = ['sepet_id','siparis_tutari','banka','taksit_sayisi','durum'];*/
+    protected $fillable = ['sepet_id','siparis_tutari','adsoyad','telefon','ceptelefon','durum','banka','taksit_sayisi'];
 
-    protected $guarded = [];
+   /* protected $guarded = [];*/
 
 
     public function sepet()

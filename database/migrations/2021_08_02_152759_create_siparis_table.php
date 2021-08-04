@@ -18,6 +18,10 @@ class CreateSiparisTable extends Migration
             $table->integer('sepet_id')->unsigned();
             $table->decimal('siparis_tutari',10,4);
             $table->string('durum', 30)->nullable();
+            $table->string('adsoyad', 50)->nullable();
+            $table->string('adres', 200)->nullable();
+            $table->string('telefon', 15)->nullable();
+            $table->string('ceptelefon', 15)->nullable();
             $table->string('banka',20)->nullable();
             $table->string('taksit_sayisi')->nullable();
             $table->timestamps();
