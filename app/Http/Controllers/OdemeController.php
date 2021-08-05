@@ -50,9 +50,10 @@ class OdemeController extends Controller
 
        /* $aktif_sepet_id = session('aktif_sepet_id');
         SepetUrun::where('sepet_id',$aktif_sepet_id)->Delete();
-
         $kullanici_id = auth()->id();
-        Sepet::where('kullanici_id',$kullanici_id)->Delete();*/
+        Sepet::where('kullanici_id',$kullanici_id)->Delete();
+        Sepet Models add query
+        */
 
         session()->forget('aktif_sepet_id');
 

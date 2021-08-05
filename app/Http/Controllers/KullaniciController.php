@@ -9,6 +9,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use App\Mail\KullaniciKayitMail;
 use Mail;
 
@@ -34,7 +35,14 @@ class KullaniciController extends Controller
         if(auth()->attempt(['email' => request('email'), 'password' => request('sifre')], request()->has('benihatirla'))){
             request()->session()->regenerate();
 
-            $aktif_sepet_id = Sepet::firstOrCreate(['kullanici_id'=>auth()->id()])->id;
+            $aktif_sepet_id = Sepet::aktif_sepet_id();
+            if (is_null($aktif_sepet_id))
+            {
+                $aktif_sepet = Sepet::create(['kullanici_id'=>auth()->id()]);
+                $aktif_sepet_id = $aktif_sepet->id;
+            }
+           /* dd($aktif_sepet_id);
+            */
             session()->put('aktif_sepet_id', $aktif_sepet_id);
 
             if (Cart::count()>0) { /* sessionda varsa veritabanına ekle yoksa ekle session veritabanı eşitlendi*/
