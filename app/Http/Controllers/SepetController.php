@@ -7,6 +7,7 @@ use App\Models\Urun;
 use App\Models\Sepet;
 use App\Models\SepetUrun;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Validator;
 

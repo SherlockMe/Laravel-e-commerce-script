@@ -30,4 +30,10 @@ class Sepet extends Model
         ->first();
         if (!is_null($aktif_sepet)) return $aktif_sepet->id;
     }
+
+    public function sepet_urun_adet()
+    {
+        return DB::table('sepet_urun')->where('sepet_id', $this->id)->sum('adet');
+    }
+
 }
