@@ -19,6 +19,11 @@ class Sepet extends Model
         return $this->hasOne('App\Models\Siparis');
     }
 
+    public function sepet_urunler()
+    {
+        return $this->hasMany('App\Models\SepetUrun');
+    }
+
     public static function aktif_sepet_id()
     {
         $aktif_sepet = DB::table('sepet as s')

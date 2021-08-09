@@ -11,7 +11,7 @@ class Siparis extends Model
 
     protected $table = 'siparis';
 
-    protected $fillable = ['sepet_id','siparis_tutari','adsoyad','telefon','ceptelefon','durum','banka','taksit_sayisi'];
+    protected $fillable = ['sepet_id','siparis_tutari','adsoyad','adres','telefon','ceptelefon','durum','banka','taksit_sayisi'];
 
    /* protected $guarded = [];*/
 
@@ -20,6 +20,5 @@ class Siparis extends Model
     {
         return $this->belongsTo('App\Models\Sepet');
     }
-
-
+    
 }
