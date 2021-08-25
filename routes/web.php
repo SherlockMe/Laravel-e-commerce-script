@@ -10,6 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix'=>'yonetim', 'namespace'=>'Yonetim'], function () {
+    Route::get('/',function(){
+    return "Admin";
+    });
+    Route::get('/oturumac','KullaniciController@oturumac')->name('yonetim.oturumac');
+    Route::get('/anasayfa','AnasayfaController@index')->name('yonetim.anasayfa');
+});
+
 Route::get('/', 'AnasayfaController@Index')->name('anasayfa');
 
 Route::get('/kategori/{slug_kategoriadi}','KategoriController@index')->name('kategori');
