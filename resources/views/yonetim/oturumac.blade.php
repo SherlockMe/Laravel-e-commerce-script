@@ -11,15 +11,18 @@
 
 <body>
     <div class="container">
-        <form class="form-signin">
+        @include('layouts.partials.alert')
+        @include('layouts.partials.errors')
+        <form class="form-signin" role="form" method="POST" action="{{ route('yonetim.oturumac') }}">
+            {{ csrf_field() }}
             <img src="/img/logo.png" class="logo">
             <label for="email" class="sr-only">Email address</label>
             <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
-            <label for="password" class="sr-only">Password</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required aut>
+            <label for="sifre" class="sr-only">Password</label>
+            <input type="password" id="sifre" name="sifre" class="form-control" placeholder="Password" required>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="rememberme" value="1" checked> Remember me
+                    <input type="checkbox" name="benihatirla" checked> Remember me
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>

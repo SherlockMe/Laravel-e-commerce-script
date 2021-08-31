@@ -12,9 +12,10 @@
 */
 Route::group(['prefix'=>'yonetim', 'namespace'=>'Yonetim'], function () {
     Route::get('/',function(){
-    return "Admin";
     });
     Route::get('/oturumac','KullaniciController@oturumac')->name('yonetim.oturumac');
+    Route::get('/oturumkapat','KullaniciController@oturumkapat')->name('yonetim.oturumkapat');
+    Route::post('/oturumac','KullaniciController@giris');
     Route::get('/anasayfa','AnasayfaController@index')->name('yonetim.anasayfa');
 });
 

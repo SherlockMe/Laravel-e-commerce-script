@@ -12,4 +12,26 @@ class KullaniciController extends Controller
         return view("yonetim.oturumac");
     }
 
+    public function giris(){
+
+        $this->validate(request(), [
+            'email'=> 'required|email',
+            'sifre'=> 'required'
+        ]);
+        
+        if(auth()->attempt(['email' => request('email'), 'password' => request('sifre')], request()->has('benihatirla'))){
+            request()->session()->regenerate();
+
+            return redirect()->intended('/');
+        }
+        else{
+            $errors = ['email'=>'hatalı giriş'];
+            return back()->withErrors($errors);
+        }
+
+        return view('yonetim.oturumac');
+    }
+
+
+
 }
