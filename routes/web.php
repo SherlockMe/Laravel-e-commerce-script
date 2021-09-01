@@ -11,12 +11,30 @@
 |
 */
 Route::group(['prefix'=>'yonetim', 'namespace'=>'Yonetim'], function () {
-    Route::get('/',function(){
-    });
-    Route::get('/oturumac','KullaniciController@oturumac')->name('yonetim.oturumac');
-    Route::get('/oturumkapat','KullaniciController@oturumkapat')->name('yonetim.oturumkapat');
-    Route::post('/oturumac','KullaniciController@giris');
+    Route::redirect('/','/yonetim/oturumac');
+
+    Route::match(['get', 'post'], '/oturumac', 'KullaniciController@oturumac')->name('yonetim.oturumac');
+    Route::get('/oturumkapat','KullaniciController@oturumukapat')->name('yonetim.oturumukapat');
+
+    Route::group(['middleware'=>'yonetim'], function () { //middleware yonetim.php
+
     Route::get('/anasayfa','AnasayfaController@index')->name('yonetim.anasayfa');
+
+    Route::prefix('kullanici')->group(function () {
+
+    Route::match(['get', 'post'], '/', 'KullaniciController@index')->name('yonetim.kullanici');
+    Route::get('/yeni', 'KullaniciControllr@form')->name('yonetim.kullanici.yeni');
+    Route::get('/duzenle/{id}', 'KullaniciControllr@form')->name('yonetim.kullanici.duzenle');
+    Route::post('/kaydet/{id?}', 'KullaniciControllr@kaydet')->name('yonetim.kullanici.kaydet');
+    Route::get('/sil/{id}', 'KullaniciControllr@sil')->name('yonetim.kullanici.sil');
+    
+    });
+    
+    
+
+    });
+
+
 });
 
 Route::get('/', 'AnasayfaController@Index')->name('anasayfa');

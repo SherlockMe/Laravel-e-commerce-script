@@ -4,34 +4,57 @@ namespace App\Http\Controllers\Yonetim;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Auth;
+use App\Models\Kullanici;
 
 class KullaniciController extends Controller
 {
     //
     public function oturumac(){
-        return view("yonetim.oturumac");
-    }
-
-    public function giris(){
+        
+        if (request()->isMethod('POST')){
 
         $this->validate(request(), [
             'email'=> 'required|email',
             'sifre'=> 'required'
         ]);
-        
-        if(auth()->attempt(['email' => request('email'), 'password' => request('sifre')], request()->has('benihatirla'))){
-            request()->session()->regenerate();
 
-            return redirect()->intended('/');
+        $credentials = [ 
+            'email'=> request()->get('email'),
+            'password'=> request()->get('sifre'),
+            'yonetici_mi'=> 1
+        ];
+
+        if (Auth::guard('yonetim')->attempt($credentials, request()->has('benihatirla')))
+        {
+
+            return redirect()->route('yonetim.anasayfa');
+
         }
         else{
-            $errors = ['email'=>'hatalı giriş'];
-            return back()->withErrors($errors);
+            return back()->withInput()->withErrors(['email'=>'Giriş Hatalı']);
         }
+    }
+    return view("yonetim.oturumac");
+    }
+    
 
-        return view('yonetim.oturumac');
+    public function oturumukapat(){
+        auth::guard('yonetim')->logout();
+        request()->session()->flush();
+        request()->session()->regenerate();
+        return redirect()->route('yonetim.oturumac');
     }
 
+    public function index(){
+        $list = Kullanici::orderByDesc('created_at')->pagination(8);
+        return view('yonetim.kullanici.index',compact('list'));
+    }
 
-
+    public function form(){
+    }
+    public function kaydet(){
+    }
+    public function sil(){
+    }
 }

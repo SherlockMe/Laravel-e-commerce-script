@@ -35,7 +35,7 @@
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#">Logout</a>
+                            <a href="{{route('yonetim.oturumukapat')}}">Logout</a>
                         </li>
                     </ul>
                 </li>
