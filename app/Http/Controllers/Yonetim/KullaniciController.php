@@ -47,7 +47,7 @@ class KullaniciController extends Controller
     }
 
     public function index(){
-        $list = Kullanici::orderByDesc('created_at')->pagination(8);
+        $list = Kullanici::orderByDesc('created_at')->paginate(8);
         return view('yonetim.kullanici.index',compact('list'));
     }
 

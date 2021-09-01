@@ -18,10 +18,10 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">Home</a>
+                    <a href="{{ route('yonetim.anasayfa')}}">Giriş</a>
                 </li>
                 <li>
-                    <a href="#">Settings</a>
+                    <a href="#">Ayarlar</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -35,7 +35,7 @@
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="{{route('yonetim.oturumukapat')}}">Logout</a>
+                            <a href="{{route('yonetim.oturumukapat')}}">Çıkış</a>
                         </li>
                     </ul>
                 </li>
