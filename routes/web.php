@@ -23,10 +23,10 @@ Route::group(['prefix'=>'yonetim', 'namespace'=>'Yonetim'], function () {
     Route::prefix('kullanici')->group(function () {
 
     Route::match(['get', 'post'], '/', 'KullaniciController@index')->name('yonetim.kullanici');
-    Route::get('/yeni', 'KullaniciControllr@form')->name('yonetim.kullanici.yeni');
-    Route::get('/duzenle/{id}', 'KullaniciControllr@form')->name('yonetim.kullanici.duzenle');
-    Route::post('/kaydet/{id?}', 'KullaniciControllr@kaydet')->name('yonetim.kullanici.kaydet');
-    Route::get('/sil/{id}', 'KullaniciControllr@sil')->name('yonetim.kullanici.sil');
+    Route::get('/yeni', 'KullaniciController@form')->name('yonetim.kullanici.yeni');
+    Route::get('/duzenle/{id}', 'KullaniciController@form')->name('yonetim.kullanici.duzenle');
+    Route::post('/kaydet/{id?}', 'KullaniciController@kaydet')->name('yonetim.kullanici.kaydet');
+    Route::get('/sil/{id}', 'KullaniciController@sil')->name('yonetim.kullanici.sil');
     
     });
     

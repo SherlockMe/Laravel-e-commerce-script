@@ -47,7 +47,7 @@
                 <td>{{ $item->created_at}}</td>
 
                 <td style="width: 100px">
-                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                    <a href="{{ route('yonetim.kullanici.duzenle', $item->id) }}" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                         <span class="fa fa-pencil"></span>
                     </a>
                     <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Tooltip on top" onclick="return confirm('Are you sure?')">
