@@ -4,11 +4,10 @@
 
 
 <h1 class="sub-header">
-    <div class="btn-group pull-right" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-primary">Print</button>
-        <button type="button" class="btn btn-primary">Export</button>
+    <div class="btn-group pull-right">
+        <a href="{{ route('yonetim.kullanici.yeni') }}" class="btn btn-primary">Yeni</a>
     </div>
-    Table
+    Kullanıcılar
 </h1>
 <div class="table-responsive">
     <table class="table table-hover table-bordered">
@@ -50,7 +49,7 @@
                     <a href="{{ route('yonetim.kullanici.duzenle', $item->id) }}" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                         <span class="fa fa-pencil"></span>
                     </a>
-                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Tooltip on top" onclick="return confirm('Are you sure?')">
+                    <a href="{{ route('yonetim.kullanici.sil', $item->id) }}" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Tooltip on top" onclick="return confirm('Kayıt Silinecek emin misiniz?')">
                         <span class="fa fa-trash"></span>
                     </a>
                 </td>

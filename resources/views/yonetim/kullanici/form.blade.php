@@ -25,13 +25,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="adsoyad">Ad Soyad</label>
-                                <input type="text" class="form-control" id="adsoyad" name="adsoyad" placeholder="adsoyad" value="{{ $entry->adsoyad }}">
+                                <input type="text" class="form-control" id="adsoyad" name="adsoyad" placeholder="adsoyad" value="{{ old('adsoyad', $entry->adsoyad) }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ $entry->email }}">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email', $entry->email) }}">
                             </div>
                         </div>
 
@@ -39,7 +39,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="sifre">Şifre</label>
-                                <input type="password" class="form-control" id="sifre" placeholder="sifre">
+                                <input type="password" class="form-control" id="sifre" name="sifre" placeholder="sifre">
                             </div>
                         </div>
                     </div>
@@ -65,8 +65,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="ceptelefon">Cep Telefon</label>
-                                <input type="text" class="form-control" id="ceptelefon" name="ceptelefon" placeholder="Cep Telefon" value="{{ $entry->detay->ceptelefonu }}">
+                                <label for="ceptelefonu">Cep Telefon</label>
+                                <input type="text" class="form-control" id="ceptelefonu" name="ceptelefonu" placeholder="Cep Telefon" value="{{ $entry->detay->ceptelefonu }}">
                             </div>
                         </div>
                     </div>

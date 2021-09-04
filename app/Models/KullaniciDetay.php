@@ -16,5 +16,7 @@ class KullaniciDetay extends Model
         return $this->belongsTo('App\Models\Kullanici');
     }
 
+    public $timestamps = false; 
+
     
 }

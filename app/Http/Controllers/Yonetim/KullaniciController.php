@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Hash;
 use App\Models\Kullanici;
+use App\Models\KullaniciDetay;
+use App\Models\Sepet;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
@@ -92,6 +94,12 @@ class KullaniciController extends Controller
         else{
              $entry = Kullanici::create($data);
         }
+        KullaniciDetay::updateOrCreate(
+            ['kullanici_id' => $entry->id],
+            ['adres'=> request('adres'), 'telefon' => request('telefon'),'ceptelefonu' => request('ceptelefonu')]
+        );
+
+
         return redirect()
         ->route('yonetim.kullanici.duzenle', $entry->id)
         ->with('mesaj', ($id > 0 ? 'Guncellendi' : 'Kaydedildi'))
@@ -99,7 +107,20 @@ class KullaniciController extends Controller
 
     }
 
-    public function sil(){
+    public function sil($id){
+
+        Kullanici::Destroy($id);
+
+        return redirect()
+        ->route('yonetim.kullanici')
+        ->with('mesaj', ('Kullanıcı Silindi'))
+        ->with('mesaj_tur', 'success');
+
+        /*$kullanici = Kullanici::where('id', $id)->Delete();
+        
+         Sepet::where('kullanici_id', $id)->Delete();
+        */
+
     }
 
 }
