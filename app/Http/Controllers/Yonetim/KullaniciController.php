@@ -52,7 +52,18 @@ class KullaniciController extends Controller
     }
 
     public function index(){
-        $list = Kullanici::orderByDesc('created_at')->paginate(8);
+
+        if (request()->filled('aranan')){
+            request()->flash();
+            $aranan = request('aranan');
+            $list = Kullanici::where('adsoyad','like',"%$aranan%")
+            ->orwhere('email','like',"%$aranan%")
+            ->orderByDesc('created_at')
+            ->paginate(8);
+        }
+        else{
+            $list = Kullanici::orderByDesc('created_at')->paginate(8);
+        }
         return view('yonetim.kullanici.index',compact('list'));
     }
 
