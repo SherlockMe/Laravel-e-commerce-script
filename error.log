@@ -918,3 +918,11 @@
 127.0.0.1 - - [28/Jul/2021:17:33:55 +0300] "GET /announce?info_hash=Z%f2%00_%cb%c8%8b4%a3F%e4%8a%1e%86%8dEU%26%dc%9e&peer_id=-UT355W-%d6%b3%9f%df%a4%fe%c66%f9j%7b%89&port=40556&uploaded=13615104&downloaded=2449473536&left=1221689344&corrupt=58720256&key=98460FD3&event=started&numwant=200&compact=1&no_peer_id=1 HTTP/1.1" 404 3500
 127.0.0.1 - - [28/Jul/2021:18:06:55 +0300] "GET /announce?info_hash=Z%f2%00_%cb%c8%8b4%a3F%e4%8a%1e%86%8dEU%26%dc%9e&peer_id=-UT355W-%d6%b3%9f%df%a4%fe%c66%f9j%7b%89&port=40556&uploaded=18202624&downloaded=3271557120&left=411549696&corrupt=58720256&key=C6D3EFFF&event=started&numwant=200&compact=1&no_peer_id=1 HTTP/1.1" 404 3500
 127.0.0.1 - - [28/Jul/2021:18:39:55 +0300] "GET /announce?info_hash=Z%f2%00_%cb%c8%8b4%a3F%e4%8a%1e%86%8dEU%26%dc%9e&peer_id=-UT355W-%d6%b3%9f%df%a4%fe%c66%f9j%7b%89&port=40556&uploaded=21954560&downloaded=3689670443&left=0&corrupt=58720256&key=49B02EB8&event=started&numwant=200&compact=1&no_peer_id=1 HTTP/1.1" 404 3500
+127.0.0.1 - - [13/Oct/2021:00:14:47 +0300] "POST /phpmyadmin/index.php?route=/config/get HTTP/1.1" 200 1737
+127.0.0.1 - - [13/Oct/2021:00:14:47 +0300] "POST /phpmyadmin/index.php?route=/version-check HTTP/1.1" 200 64
+127.0.0.1 - - [13/Oct/2021:00:14:47 +0300] "POST /phpmyadmin/index.php?route=/config/set HTTP/1.1" 200 1639
+127.0.0.1 - - [13/Oct/2021:00:14:48 +0300] "GET /phpmyadmin/index.php?route=/database/structure&server=1&db=ayt&ajax_request=true&ajax_page_request=true&_nocache=163407328877389118&token=7b795870597639404e2877403d29325b HTTP/1.1" 200 6963
+127.0.0.1 - - [13/Oct/2021:00:14:48 +0300] "GET /phpmyadmin/index.php?route=/navigation&ajax_request=1&server=1&aPath=cm9vdA%3D%3D.YXl0&vPath=cm9vdA%3D%3D.YXl0&pos=0&searchClause=&searchClause2=&_nocache=1634073288955211019&token=7b795870597639404e2877403d29325b HTTP/1.1" 200 2378
+127.0.0.1 - - [13/Oct/2021:00:14:51 +0300] "GET /phpmyadmin/index.php?route=/database/export&db=ayt&ajax_request=true&ajax_page_request=true&_nocache=1634073291842706376&token=7b795870597639404e2877403d29325b HTTP/1.1" 200 14507
+127.0.0.1 - - [13/Oct/2021:00:14:54 +0300] "POST /phpmyadmin/index.php?route=/export HTTP/1.1" 200 15159
+127.0.0.1 - - [17/Oct/2021:22:42:44 +0300] "GET /ayt/admin/ckeditor/plugins/tableselection/styles/tableselection.css HTTP/1.1" 404 3506
